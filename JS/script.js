@@ -1,4 +1,8 @@
 
+//Retrieve user name
+
+let userName = (prompt ("Insert user name"))
+
 //Retrieve user age
 const passengerAge = parseInt(prompt("Insert age of passenger"));
 
@@ -24,9 +28,16 @@ console.log(price)
 //Calc final price
 let finalPrice = price - ((discount / 100) * price);
 
+if (userName == "Riccardo"){
+    finalPrice = price * 3;
+}
+
 console.log(finalPrice)
 
 //Insert results on html to show result to the user
+
+document.getElementById('user-name').innerHTML += userName
+
 document.getElementById('passenger-age').innerHTML += passengerAge;
 
 document.getElementById('travel-distance').innerHTML += travelDistance;
