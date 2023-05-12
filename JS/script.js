@@ -9,6 +9,9 @@ const passengerAge = parseInt(prompt("Insert age of passenger"));
 //Retrieve travel distance
 const travelDistance = parseInt(prompt("Inset how much you want to travel (in km, barbarian!)"));
 
+ //Retrieve lottery number
+const UserLotteryNumber = parseInt(prompt ("Insert your lucky number from 9 to 1, something goos might happen!"));
+
 //Starting price
 let price = (travelDistance * 0.21).toFixed(2);
 
@@ -23,14 +26,23 @@ if ( passengerAge < 18) {
     discount = 0;
 } 
 
-console.log(price)
+console.log(price);
+
+//Lottery calculator
+const systemLotteryNumber = Math.floor(Math.random() * (9 - 1) + 1);
+console.log( systemLotteryNumber)
 
 //Calc final price
-let finalPrice = price - ((discount / 100) * price);
+let finalPrice = price - ((discount / 100) * price).toFixed(2);
+
+if (UserLotteryNumber == systemLotteryNumber){
+    finalPrice = 0
+}
 
 if (userName == "Riccardo"){
     finalPrice = price * 3;
 }
+
 
 console.log(finalPrice)
 
